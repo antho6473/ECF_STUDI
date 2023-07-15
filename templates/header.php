@@ -30,7 +30,7 @@
           </li>
       
         </ul>
-        <button class="myButton">Se connecter</button>
+        <button class="myButton">Espace Pro</button>
       </div>
     </div>
   </div>

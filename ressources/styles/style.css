@@ -1,16 +1,51 @@
 @font-face {
 	font-family: 'Roboto';
-	src: url('Roboto-Bold.ttf') format(truetype)
+	src: url('../fonts/Roboto/Roboto-Regular.ttf') format(truetype)
+}
+
+@font-face {
+	font-family: 'KumarOne';
+	src: url('../fonts/KumarOne.ttf') format(truetype)
 }
 
 * {
-    padding: 0;
     text-decoration: none;
-    margin: 0;
     list-style-type: none;
 }
 
+h1 {
+    font-family: 'KumarOne';
+    font-size: 42px;
+    color:#000000;
+    padding: 20px;
+}
+
+h2{
+    color: #000000;
+    font-family: 'KumarOne';
+    font-size: 30px;
+}
+
+h3{
+    font-family: 'Roboto';
+    font-size: 33;
+    text-transform: uppercase;
+}
+
+h4 {
+    text-transform: uppercase;
+    font-family: 'Roboto';
+    font-size: 23px;
+    font-weight: bolder;
+}
+
+p{
+    font-size: 16px;
+    line-height: 2;
+}
+
 body{
+    color: white;
     font-family: 'Roboto' !important;
 }
 
@@ -74,4 +109,60 @@ footer td{
 
 ul{
     padding: 0;
+}
+
+.headContent, .services, .comments{
+    padding-top: 50px;
+    padding-bottom: 50px;;
+}
+
+.headContent {
+    color: black;
+}
+
+.image1{
+    height: 300px;
+    width: 500px;
+    background-size: cover;
+    background-image: url(../images/index/garage.jpg);
+}
+
+.card-text {
+    text-align: justify;
+}
+
+.card {
+    background-color: #47496B;
+    color: white !important;
+    font-weight: lighter !important;
+}
+
+.comment{
+    background-color: #47496B;
+    padding: 20px;
+}
+
+.stars {
+    font-size: 30px;
+}
+
+.gold {
+    color: gold;
+}
+
+#error {
+    background-color: rgba(0, 0, 0, 0.06);
+    color: red;
+    margin-bottom: 10px;
+}
+
+.contactForm{
+    background-color: #47496B;
+    padding: 25px;
+}
+
+.filtre {
+    padding: 25px;
+    background-color: #47496B;
+    margin-bottom: auto;
 }
