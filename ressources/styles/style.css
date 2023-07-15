@@ -1,0 +1,77 @@
+@font-face {
+	font-family: 'Roboto';
+	src: url('Roboto-Bold.ttf') format(truetype)
+}
+
+* {
+    padding: 0;
+    text-decoration: none;
+    margin: 0;
+    list-style-type: none;
+}
+
+body{
+    font-family: 'Roboto' !important;
+}
+
+.menuMobile, footer{
+    background-color: #272a67;
+}
+
+.navbar {
+    background-color: #272a67;
+    padding: 1rm;
+    height: 0;
+    min-height: 12vh;
+}
+
+.navbar-nav .nav-item a{
+    color: white;
+}
+
+.navbar-nav .nav-item a:hover {
+    color: rgb(184, 184, 184);
+    font-weight: 500;
+}
+
+.myButton{
+
+font-family: Roboto, sans-serif;
+font-weight: 0;
+font-size: 14px;
+color: #000000;
+background-color: #b6d5c9;
+padding: 10px 30px;
+border: none;
+box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+border-radius: 50px;
+transition : 1000ms;
+transform: translateY(0);
+display: flex;
+flex-direction: row;
+align-items: center;
+cursor: pointer;
+text-decoration: none;
+margin: auto;
+}
+
+.myButton:hover{
+
+text-decoration: none;
+font-weight: 500;
+transition : 1000ms;
+padding: 10px 50px;
+transform : translateY(-0px);
+background-color: #88c4ad;
+color: #000000;
+border: none;
+}
+
+footer td{
+    color: white !important;
+    background-color: #272a67 !important;
+}
+
+ul{
+    padding: 0;
+}
