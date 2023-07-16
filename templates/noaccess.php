@@ -1,15 +1,3 @@
-<?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
-
-    session_start();
-
-if($_SESSION['role'] != 1 && $_SESSION['role'] != 2){
-    header('Location: ../functions/login.php');
-    exit();
-} 
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,14 +12,17 @@ if($_SESSION['role'] != 1 && $_SESSION['role'] != 2){
 <body>
     <!-- Inclure le header-->
     <?php 
-    include 'header.php';
-    
-    
-    echo $_SESSION['role'];
-    ?>
+    session_start();
+    include 'header.php' ?>
 
+    <!-- Premiere section content1 -->
+    <div class="container">
+        <h2 class ="p-3 text-center" style="padding-top: 50px !important;">Vous n'avez pas accès à cette page !</h2>
+        <a href="http://localhost/demo/LuxuryGarage/index.php"><button class="myButton">Accueil</button></a>
+    </div>
 
-
+    <!-- Inclure le footer-->
+    <?php include 'footer.php' ?>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>

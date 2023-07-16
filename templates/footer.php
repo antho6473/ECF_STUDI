@@ -1,5 +1,5 @@
 <!-- Remove the container if you want to extend the Footer to full width. -->
-<div class="container-fluid p-0 my-5">
+<div class="container-fluid p-0 mt-5">
 
     <footer class="text-white text-lg-start">
     <!-- Grid container -->

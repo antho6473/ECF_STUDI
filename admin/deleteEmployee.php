@@ -2,12 +2,12 @@
 error_reporting(E_ALL);
 ini_set("display_errors", 1);
 
-    session_start();
+session_start();
 
-if($_SESSION['role'] != 1 && $_SESSION['role'] != 2){
-    header('Location: ../functions/login.php');
+if (!isset($_SESSION['role']) || $_SESSION['role'] != 2) {
+    header('Location: http://localhost/demo/LuxuryGarage/templates/noaccess.php');
     exit();
-} 
+}
 
 ?>
 <!DOCTYPE html>
@@ -23,16 +23,24 @@ if($_SESSION['role'] != 1 && $_SESSION['role'] != 2){
 
 <body>
     <!-- Inclure le header-->
-    <?php 
+    <?php
     include 'header.php';
-    
-    
-    echo $_SESSION['role'];
+
+
+    require('../database/connDb.php');
+    $id = $_GET['id'];
+    $sql = "DELETE FROM users WHERE id = '$id'";
+    $conn->query($sql);
+    $conn->close();
+
     ?>
+    <div class="container">
+        <div class="col-lg-6 py-2 mx-auto">
+            <h3 class="text-center text-dark p-5">L'employé a bien été supprimé !</h3>
 
-
-
-
+            <a href="http://localhost/demo/LuxuryGarage/admin/employee.php"><button class="myButton">Retour au gestionnaire</button></a>
+        </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

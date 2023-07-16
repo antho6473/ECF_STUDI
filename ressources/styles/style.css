@@ -13,6 +13,10 @@
     list-style-type: none;
 }
 
+a{
+    text-decoration: none !important;
+}
+
 h1 {
     font-family: 'KumarOne';
     font-size: 42px;

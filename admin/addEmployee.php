@@ -1,3 +1,15 @@
+<?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
+session_start();
+
+if (!isset($_SESSION['role']) || $_SESSION['role'] != 2) {
+    header('Location: http://localhost/demo/LuxuryGarage/templates/noaccess.php');
+    exit();
+}
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,57 +22,58 @@
 </head>
 
 <body>
-    <?php 
+    <!-- Inclure le header-->
+    <?php
+
     error_reporting(E_ALL);
     ini_set("display_errors", 1);
-
-    session_start();
-
-    include '../templates/header.php';
-    include 'hashPassword.php';
-
-    include('../database/connDb.php');
+    include 'header.php';
 
 
-if (isset($_POST['email']) &&  isset($_POST['pass'])) {
-    $submitEmail = $_POST['email'];
-    $sql = "SELECT email, pass, role_id FROM users WHERE email = '$submitEmail'";
 
-    $result = $conn->query($sql);
-    $row = $result->fetch_row();
+    if (isset($_POST['email']) &&  isset($_POST['pass'])) {
+        include('../database/connDb.php');
+        $user = $_POST['email'];
+        $pass = $_POST['pass'];
+        $role = "1";
+        $sql = "SELECT email, pass, role_id FROM users WHERE email = '$user'";
 
-    $isPasswordCorrect = password_verify($_POST['pass'], $row[1]);
-    if($isPasswordCorrect) {
-        $_SESSION['role'] = $row[2];
-        ob_start();
-        header('Location: ../admin/pannelAdmin.php');
-        exit();
-    }else {
-        $errorMessage = sprintf('Les informations envoyées ne permettent pas de vous identifier : (%s/%s)',
-            $_POST['email'],
-            $_POST['pass']
-        );
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            $errorMessage = sprintf(
+                'L\'email est déjà utilisée: (%s)',
+                $_POST['email']
+            );
+        } else {
+            $passHashed = password_hash($pass, PASSWORD_DEFAULT);
+            $sql = "INSERT INTO users (email, pass, role_id) VALUES ('$user', '$passHashed', '$role')";
+
+            $result = $conn->query($sql);
+            $successMessage = sprintf(
+                'L\'employé a été ajouté avec succés : (%s)',
+                $_POST['email']
+            );
+        }
+        $conn->close(); 
     }
-}
 
-
-
-    $conn->close();
-    
     ?>
 
-<?php 
 
-if ($_SESSION['role'] != 1 && $_SESSION['role'] != 2): ?>
-    
-<div class="container">
-        <h1 class="pt-5 text-center">Formulaire de connexion</h1>
-        <p class="text-center text-dark">Veuillez rentrer vos identifiants
+    <div class="container">
+        <h1 class="pt-5 text-center">Ajouter un nouvel employé</h1>
+        <p class="text-center text-dark">Veuillez saisir les futur identifiants de l'employé
         </p>
         <form action="#" method="POST" id="formEvent" enctype="multipart/form-data" class="contactForm rounded">
-            <?php if (isset($errorMessage)): ?>
+            <?php if (isset($errorMessage)) : ?>
                 <div class="alert alert-danger" role="alert">
                     <?php echo $errorMessage; ?>
+                </div>
+            <?php endif; ?>
+            <?php if (isset($successMessage)) : ?>
+                <div class="alert alert-success" role="alert">
+                    <?php echo $successMessage; ?>
                 </div>
             <?php endif; ?>
             <div class="row">
@@ -85,7 +98,7 @@ if ($_SESSION['role'] != 1 && $_SESSION['role'] != 2): ?>
             let nom = document.getElementById('email');
             let prenom = document.getElementById('pass');
 
-            formEvent.addEventListener("submit", function (e) {
+            formEvent.addEventListener("submit", function(e) {
                 if (email.value.trim() == "" || pass.value.trim() == "") {
                     let error = document.getElementById('error');
                     error.innerHTML = 'Veuillez remplir tout les champs.';
@@ -94,13 +107,6 @@ if ($_SESSION['role'] != 1 && $_SESSION['role'] != 2): ?>
             })
         </script>
     </div>
-    <?php else: 
-        
-        ob_start();
-        header('Location: ../admin/pannelAdmin.php');
-        exit();
-    
-    endif; ?>
     <!-- Inclure le footer-->
     <?php include '../templates/footer.php' ?>
 
