@@ -150,6 +150,12 @@ ul{
     font-size: 30px;
 }
 
+.fa-star {
+    cursor: pointer;
+    
+    color: grey;
+}
+
 .gold {
     color: gold;
 }

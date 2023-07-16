@@ -12,8 +12,9 @@
 
     <div class="container">
         <h1 class="pt-5 text-center">Formulaire de contact</h1>
-        <p class="text-center">Nous répondrons à votre demande dans les plus brefs délais
+        <p class="text-center text-dark">Nous répondrons à votre demande dans les plus brefs délais
         </p>
+        <div class="col-8 mx-auto">
         <form action="" method="POST" id="formEvent" enctype="multipart/form-data" class="contactForm rounded">
             <div class="row">
                 <div class="col-lg-6 mb-2 mx-auto">
@@ -49,7 +50,7 @@
                 </div>
             </div>
         </form>
-
+        </div>
         <script>
             let nom = document.getElementById('nom');
             let prenom = document.getElementById('prenom');

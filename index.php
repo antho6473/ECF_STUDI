@@ -37,37 +37,9 @@
     <div class="row">
         <h2 class="text-center">Les Services</h2>
         <!-- Première card service : Carosserie -->
-        <div class="col-lg py-2">
-            <div class="card">
-                <img class="card-img-top" src="ressources/images/index/carosserie.jpg" alt="Carosserie">
-                <div class="card-body">
-                    <h3 class="card-title text-center">Carosserie</h3>
-                    <p class="card-text">Nos spécialistes en carrosserie utilisent des techniques de pointe pour réparer et restaurer l'apparence de votre véhicule. Que ce soit pour des dommages légers ou majeurs, nous sommes là pour vous offrir un service de qualité et redonner à votre voiture son éclat d'origine. Prenez rendez-vous dès aujourd'hui et offrez une nouvelle jeunesse à votre véhicule. Votre satisfaction est notre priorité absolue.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Deuxième card service : Mécanique -->
-        <div class="col-lg py-2">
-            <div class="card">
-                <img class="card-img-top" src="ressources/images/index/mecanique.jpg" alt="Mécanique">
-                <div class="card-body">
-                    <h3 class="card-title text-center">Mécanique</h3>
-                    <p class="card-text">Bienvenue dans notre section Mécanique ! Chez Luxury Garage, notre équipe expérimentée offre des services de mécanique automobile de haute qualité. Que ce soit pour une vidange d'huile, un remplacement de pneus ou des réparations plus complexes, nous utilisons des équipements de pointe et des pièces de qualité. Nous vous garantissons un service professionnel, honnête et transparent.</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Troisème card service : Pneus -->
-        <div class="col-lg py-2">
-            <div class="card">
-                <img class="card-img-top" src="ressources/images/index/pneu.jpg" alt="Pneus">
-                <div class="card-body">
-                    <h3 class="card-title text-center">Pneus</h3>
-                    <p class="card-text">Nous assurons le montage professionnel de pneus pour tous types de véhicules. Notre équipe expérimentée offre un service rapide et fiable. Que ce soit pour un changement saisonnier, un remplacement usuel ou une amélioration de performance, nous sommes là pour vous aider. Nous utilisons des équipements de pointe et suivons les procédures recommandées par les fabricants pour un montage précis et sécurisé</p>
-                </div>
-            </div>
-        </div>
+        <?php 
+        include 'templates/contentRender.php';
+        ?>
     </div>
     </div>
 
@@ -75,29 +47,9 @@
     <div class="container comments">
         <h2 class="text-center">Les Avis</h2>
 
-        <div class="col-lg-12 comment my-4">
-            <h4 class="text-center">HUGO</h4>
-            <p class="text-center">“ Je recommande vivement Garage Parrot. Excellent accueil, prise en compte des besoins, honnêteté et professionnalisme. “</p>
-            <div class="stars text-center">
-		        <span class="fa-star gold">★</span>
-		        <span class="fa-star gold">★</span>
-		        <span class="fa-star">★</span>
-		        <span class="fa-star">★</span>
-		        <span class="fa-star">★</span>
-	        </div>
-        </div>
-
-        <div class="col-lg-12 comment my-4">
-            <h4 class="text-center">HUGO</h4>
-            <p class="text-center">“ Je recommande vivement Garage Parrot. Excellent accueil, prise en compte des besoins, honnêteté et professionnalisme. “</p>
-            <div class="stars text-center">
-		        <span class="fa-star gold">★</span>
-		        <span class="fa-star gold">★</span>
-		        <span class="fa-star">★</span>
-		        <span class="fa-star">★</span>
-		        <span class="fa-star">★</span>
-	        </div>
-        </div>
+        <?php 
+        include 'templates/testimonialsRender.php';
+        ?>
     </div>
     
 

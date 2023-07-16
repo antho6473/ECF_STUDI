@@ -3,7 +3,7 @@
         <div class="container">
 
             <!-- Logo -->
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="http://localhost/demo/LuxuryGarage">
                 <img src="http://localhost/demo/LuxuryGarage/ressources/images/logoW.png" height="50px" alt="">
             </a>
 
@@ -20,17 +20,17 @@
                 <div class="offcanvas-body">
                     <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
                         <li class="nav-item">
-                            <a class="nav-link" aria-current="page" href="rate.php">Gérer les commentaires</a>
+                            <a class="nav-link" aria-current="page" href="http://localhost/demo/LuxuryGarage/admin/testimonials/testimonials.php">Gérer les avis</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="usedCars.php">Gérer les voitures</a>
+                            <a class="nav-link" href="http://localhost/demo/LuxuryGarage/admin/usedCars/usedCars.php">Gérer les voitures</a>
                         </li>
                         <?php if ($_SESSION['role'] == 2) { ?>
                             <li class="nav-item">
-                                <a class="nav-link" href="employee.php">Gérer les employés</a>
+                                <a class="nav-link" href="http://localhost/demo/LuxuryGarage/admin/employees/employee.php">Gérer les employés</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="content.php">Gérer le contenu</a>
+                                <a class="nav-link" href="http://localhost/demo/LuxuryGarage/admin/content/content.php">Gérer le contenu</a>
                             </li>
                         <?php } ?>
                     </ul>

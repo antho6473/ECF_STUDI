@@ -3,7 +3,7 @@
   <div class="container">
 
     <!-- Logo -->
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="http://localhost/demo/LuxuryGarage/">
         <img src="http://localhost/demo/LuxuryGarage/ressources/images/logoW.png" height="50px" alt="">
     </a>
 

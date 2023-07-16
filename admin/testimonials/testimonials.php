@@ -4,7 +4,7 @@ ini_set("display_errors", 1);
 
 session_start();
 
-if (!isset($_SESSION['role']) || $_SESSION['role'] != 2) {
+if ($_SESSION['role'] != 1 && $_SESSION['role'] != 2) {
     header('Location: http://localhost/demo/LuxuryGarage/templates/noaccess.php');
     exit();
 }
@@ -18,29 +18,33 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 2) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="../ressources/styles/style.css">
+    <link rel="stylesheet" href="../../ressources/styles/style.css">
 </head>
 
 <body>
     <!-- Inclure le header-->
     <?php
-    include 'header.php';
+    include '../header.php';
 
 
-    require('../database/connDb.php');
+    require '../../database/connDb.php';
 
-    $sql = "SELECT id, email FROM users WHERE role_id = '1'";
+    $sql = "SELECT id, lastname, firstname, testimonial, rating, approuved FROM testimonials";
 
     ?>
-    <h1 class="text-center">Gestion des comptes employé</h1>
+    <h1 class="text-center">Gestion des avis</h1>
     <div class="container">
-        <div class="col-lg-5 py-2 mx-auto">
+        <div class="col-lg-12 py-2 mx-auto">
             <table class="table">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">Id</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Action</th>
+                        <th scope="col">Prénom</th>
+                        <th scope="col">Nom</th>
+                        <th scope="col">Avis</th>
+                        <th scope="col">Note</th>
+                        <th scope="col">Approuvé</th>
+                        <th scope="col">Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -51,13 +55,25 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 2) {
                     if ($result->num_rows > 0) {
                         while ($row = $result->fetch_assoc()) {
                             $id = $row["id"];
-                            $email = $row["email"];
+                            $lastname = $row["lastname"];
+                            $firstname = $row["firstname"];
+                            $testimonial = $row["testimonial"];
+                            $rating = $row["rating"];
+                            $approuved = $row["approuved"];
 
                     ?>
                             <tr>
                                 <th scope="row"><?= $id ?></th>
-                                <td><?= $email ?></td>
-                                <td><a href="deleteEmployee.php?id=<?= $id ?>"><img src="../ressources/images/admin/poubelle.png" height="25px" alt=""></a></td>
+                                <td><?= $lastname ?></td>
+                                <td><?= $firstname ?></td>
+                                <td><?= $testimonial ?></td>
+                                <td><?= $rating ?></td>
+                                <td><?php if($approuved == 0){echo 'Non';}else{echo 'Oui';} ?></td>
+                                <td>
+                                    <a href="deleteTestimonial.php?id=<?= $id ?>"><img src="../../ressources/images/admin/poubelle.png" height="25px" alt=""></a>
+                                    <a href="approuveTestimonial.php?id=<?= $id ?>"><img src="../../ressources/images/admin/approuver.png" height="25px" alt=""></a>
+                                    <a href="disapprouveTestimonial.php?id=<?= $id ?>"><img src="../../ressources/images/admin/desapprouver.png" height="25px" alt=""></a>
+                                </td>
                             </tr>
                     <?php
                         }
@@ -68,7 +84,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 2) {
                 </tbody>
             </table>
 
-            <a href="http://localhost/demo/LuxuryGarage/admin/addEmployee.php"><button class="myButton">Ajouter un employé</button></a>
+            <a href="http://localhost/demo/LuxuryGarage/testimonial.php"><button class="myButton">Ajouter un avis</button></a>
         </div>
     </div>
 
