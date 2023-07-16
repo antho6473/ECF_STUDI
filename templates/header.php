@@ -4,7 +4,7 @@
 
     <!-- Logo -->
     <a class="navbar-brand" href="#">
-        <img src="ressources/images/logoW.png" height="50px" alt="">
+        <img src="http://localhost/demo/LuxuryGarage/ressources/images/logoW.png" height="50px" alt="">
     </a>
 
     <!-- Bouton mobile -->
@@ -30,7 +30,7 @@
           </li>
       
         </ul>
-        <button class="myButton">Espace Pro</button>
+        <a href="http://localhost/demo/LuxuryGarage/admin/pannelAdmin.php"><button class="myButton">Espace Pro</button></a>
       </div>
     </div>
   </div>

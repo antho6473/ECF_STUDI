@@ -11,7 +11,9 @@
 
 <body>
     <!-- Inclure le header-->
-    <?php include 'templates/header.php' ?>
+    <?php 
+    session_start();
+    include 'templates/header.php' ?>
 
     <!-- Premiere section content1 -->
     <div class="container headContent">
