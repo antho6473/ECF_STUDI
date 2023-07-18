@@ -1,12 +1,11 @@
-<!-- Remove the container if you want to extend the Footer to full width. -->
 <div class="container-fluid p-0 mt-5">
 
   <footer class="text-white text-lg-start">
-    <!-- Grid container -->
+
     <div class="container p-4">
-      <!--Grid row-->
+
       <div class="row mt-4">
-        <!--Grid column-->
+
         <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
           <h4 class="text-uppercase mb-4 text-center">Nous-contacter</h5>
 
@@ -23,7 +22,7 @@
             </ul>
 
         </div>
-        <!--Grid column-->
+
 
         <!--Grid column-->
         <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
@@ -41,7 +40,7 @@
             <table class="table text-center">
               <tbody class="font-weight-normal">
                 <?php
-                require('database/connDb.php');
+                require dirname(__DIR__).'/database/connDb.php';
 
                 $sql = "SELECT id, jours, heure FROM schedule";
                 $result = $conn->query($sql);

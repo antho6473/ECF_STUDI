@@ -161,7 +161,7 @@ ul{
 }
 
 #error {
-    background-color: rgba(0, 0, 0, 0.06);
+    background-color: rgba(0, 0, 0, 0.25);
     color: red;
     margin-bottom: 10px;
 }

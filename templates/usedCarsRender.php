@@ -6,8 +6,11 @@
 <?php
 require('database/connDb.php');
 
-$sql = "SELECT id, brand, price, years, energy, km, abs, airbag, seat, descr, photo1, photo2, photo3  FROM usedCars";
+$sql = "SELECT id, brand, price, years, energy, km, abs, airbag, seat, descr, photo1, photo2, photo3 FROM usedCars";
+
 $result = $conn->query($sql);
+
+
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
         $id = $row['id'];
@@ -25,39 +28,68 @@ if ($result->num_rows > 0) {
         $photo3 = $row['photo3'];
         if (empty($photo1) && empty($photo2) && !empty($photo3)) {
             $nb_photo = 1;
-            $renderPhoto1 = $photo3;
+
+            require('database/connDb.php');
+            $sql = "UPDATE usedcars SET photo1 = '$photo3', photo2 = '', photo3 = '' WHERE id='$id'";
+            $conn->query($sql);
+            $conn->close();
+
         } elseif (empty($photo1) && !empty($photo2) && !empty($photo3)) {
             $nb_photo = 2;
-            $renderPhoto1 = $photo2;
-            $renderPhoto2 = $photo3;
+
+            require('database/connDb.php');
+            $sql = "UPDATE usedcars SET photo1 = '$photo2', photo2 = '$photo3', photo3 = '' WHERE id='$id'";
+            $conn->query($sql);
+            $conn->close();
+
         } elseif (empty($photo2) && empty($photo3) && !empty($photo1)) {
             $nb_photo = 1;
-            $renderPhoto1 = $photo1;
+
+            require('database/connDb.php');
+            $sql = "UPDATE usedcars SET photo1 = '$photo1', photo2 = '', photo3 = '' WHERE id='$id'";
+            $conn->query($sql);
+            $conn->close();
+
         } elseif (empty($photo3)  && !empty($photo1)  && !empty($photo2)) {
             $nb_photo = 2;
-            $renderPhoto1 = $photo1;
-            $renderPhoto2 = $photo2;
+
+            require('database/connDb.php');
+            $sql = "UPDATE usedcars SET photo1 = '$photo1', photo2 = '$photo2', photo3 = '' WHERE id='$id'";
+            $conn->query($sql);
+            $conn->close();
+
         } elseif (empty($photo1) && empty($photo3)  && !empty($photo2)) {
             $nb_photo = 1;
-            $renderPhoto1 = $photo2;
+
+            require('database/connDb.php');
+            $sql = "UPDATE usedcars SET photo1 = '$photo2', photo2 = '', photo3 = '' WHERE id='$id'";
+            $conn->query($sql);
+            $conn->close();
+
         } elseif (empty($photo2)  && !empty($photo1)  && !empty($photo3)) {
             $nb_photo = 2;
-            $renderPhoto1 = $photo1;
-            $renderPhoto2 = $photo3;
+
+            require 'database/connDb.php';
+            $sql = "UPDATE usedcars SET photo1 = '$photo1', photo2 = '$photo3', photo3 = '' WHERE id='$id'";
+            $conn->query($sql);
+            $conn->close();
+
         } else {
             $nb_photo = 3;
-            $renderPhoto1 = $photo1;
-            $renderPhoto2 = $photo2;
-            $renderPhoto3 = $photo3;
+
+            require('database/connDb.php');
+            $sql = "UPDATE usedcars SET photo1 = '$photo1', photo2 = '$photo3', photo3 = '$photo3' WHERE id='$id'";
+            $conn->query($sql);
+            $conn->close();
+
         }
-        echo $nb_photo;
 ?>
 
         <div class="col-lg-5 py-2 mx-auto">
             <div class="card">
                 <?php if ($nb_photo == 1) : ?>
 
-                    <img height="250px" class="card-img-top" src="http://localhost/demo/LuxuryGarage/uploads/<?= $renderPhoto1 ?>" alt="Photo 1">
+                    <img height="250px" class="card-img-top" src="http://localhost/demo/LuxuryGarage/uploads/<?= $photo1 ?>" alt="Photo 1">
 
                 <?php elseif ($nb_photo == 2) : ?>
 
@@ -66,11 +98,11 @@ if ($result->num_rows > 0) {
                         <div class="carousel-inner">
 
                             <div class="carousel-item active c-item">
-                                <img height="250px" src="http://localhost/demo/LuxuryGarage/uploads/<?= $renderPhoto1 ?>" class="d-block w-100 c-img" alt="Slide 1">
+                                <img height="250px" src="http://localhost/demo/LuxuryGarage/uploads/<?= $photo1 ?>" class="d-block w-100 c-img" alt="Slide 1">
                             </div>
 
                             <div class="carousel-item c-item">
-                                <img height="250px" src="http://localhost/demo/LuxuryGarage/uploads/<?= $renderPhoto2 ?>" class="d-block w-100 c-img" alt="Slide 2">
+                                <img height="250px" src="http://localhost/demo/LuxuryGarage/uploads/<?= $photo2 ?>" class="d-block w-100 c-img" alt="Slide 2">
                             </div>
 
                         </div>
@@ -89,15 +121,15 @@ if ($result->num_rows > 0) {
                         <div class="carousel-inner">
 
                             <div class="carousel-item active c-item">
-                                <img height="250px" src="http://localhost/demo/LuxuryGarage/uploads/<?= $renderPhoto1 ?>" class="d-block w-100 c-img" alt="Slide 1">
+                                <img height="250px" src="http://localhost/demo/LuxuryGarage/uploads/<?= $photo1 ?>" class="d-block w-100 c-img" alt="Slide 1">
                             </div>
 
                             <div class="carousel-item c-item">
-                                <img height="250px" src="http://localhost/demo/LuxuryGarage/uploads/<?= $renderPhoto2 ?>" class="d-block w-100 c-img" alt="Slide 2">
+                                <img height="250px" src="http://localhost/demo/LuxuryGarage/uploads/<?= $photo2 ?>" class="d-block w-100 c-img" alt="Slide 2">
                             </div>
 
                             <div class="carousel-item c-item">
-                                <img height="250px" src="http://localhost/demo/LuxuryGarage/uploads/<?= $renderPhoto3 ?>" class="d-block w-100 c-img" alt="Slide 3">
+                                <img height="250px" src="http://localhost/demo/LuxuryGarage/uploads/<?= $photo3 ?>" class="d-block w-100 c-img" alt="Slide 3">
                             </div>
 
                         </div>
@@ -116,8 +148,8 @@ if ($result->num_rows > 0) {
                     <h4 class="card-title text-center"><?= $price ?>€</h3>
                     <p class="card-text">Année de fabrication: <?= $years ?></p>
                     <p class="card-text">Kilométrage: <?= $km ?>km</p>
-                    <a href="http://localhost/demo/LuxuryGarage/admin/content/content.php"><button class="myButton mb-2">Détail</button></a>
-                    <a href="http://localhost/demo/LuxuryGarage/admin/content/content.php"><button class="myButton mb-2">Envoyer un message</button></a>
+                    <a href="http://localhost/demo/LuxuryGarage/templates/detailsUsedCar.php?id=<?= $id ?>"><button class="myButton mb-2">Détail</button></a>
+                    <a href="http://localhost/demo/LuxuryGarage/templates/usedCarContact.php?id=<?= $id ?>"><button class="myButton mb-2">Envoyer un message</button></a>
                 </div>
             </div>
         </div>
@@ -125,5 +157,4 @@ if ($result->num_rows > 0) {
 <?php
     }
 }
-$conn->close();
 ?>

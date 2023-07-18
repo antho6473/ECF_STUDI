@@ -45,7 +45,7 @@ require '../admin.php';
                 $_POST['email']
             );
         }
-        $conn->close(); 
+        $conn->close();
     }
 
     ?>
@@ -78,6 +78,13 @@ require '../admin.php';
                 </div>
                 <span id="error"></span>
 
+                <ul>
+                    <li id="taille-mdp"></li>
+                    <li id="min-mdp"></li>
+                    <li id="maj-mdp"></li>
+                    <li id="chiffre-mdp"></li>
+                </ul>
+
                 <div class="col-lg-6 mx-auto">
                     <button class="myButton" type="submit">Envoyer</button>
                 </div>
@@ -85,8 +92,8 @@ require '../admin.php';
         </form>
 
         <script>
-            let nom = document.getElementById('email');
-            let prenom = document.getElementById('pass');
+            let email = document.getElementById('email');
+            let pass = document.getElementById('pass');
 
             formEvent.addEventListener("submit", function(e) {
                 if (email.value.trim() == "" || pass.value.trim() == "") {

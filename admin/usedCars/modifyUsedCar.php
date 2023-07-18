@@ -351,7 +351,7 @@ set_error_handler(function(int $errno, string $errstr) {
 
                     <div class="col-lg-6 mb-2">
                         <label for="seat" class="form-label">Nombre de places :</label>
-                        <select id="seat" class="form-select">
+                        <select id="seat" class="form-select" name="seat">
                             <option value="default">Choisir...</option>
                             <option <?php if($seat == 2){echo "selected";}?> value="2">2 places</option>
                             <option <?php if($seat == 4){echo "selected";}?> value="4">4 places</option>

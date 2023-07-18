@@ -189,7 +189,7 @@ require '../employee.php';
                 <div class="row">
 
                     <div class="col-lg-12 mb-2 mx-auto">
-                        <label for="brand" class="form-label">Modèle :</label>
+                        <label for="brand" class="form-label">Modèle* :</label>
                         <input type="text" class="form-control" name="brand" id="brand">
                     </div>
                     <div class="col-lg-6 mb-2 mx-auto">
@@ -219,8 +219,8 @@ require '../employee.php';
 
                     <div class="col-lg-6 mb-2">
                         <label for="seat" class="form-label">Nombre de places :</label>
-                        <select id="seat" class="form-select">
-                            <option selected value="default">Choisir...</option>
+                        <select id="seat" class="form-select" name="seat">
+                            <option selected value="">Choisir...</option>
                             <option value="2">2 places</option>
                             <option value="4">4 places</option>
                             <option value="5">5 places</option>
@@ -266,12 +266,13 @@ require '../employee.php';
         let price = document.getElementById('price');
         let years = document.getElementById('years');
         let km = document.getElementById('km');
+        let brand = document.getElementById('brand');
         let photo1 = document.getElementById('photo1');
         let photo2 = document.getElementById('photo2');
         let photo3 = document.getElementById('photo3');
 
         formEvent.addEventListener("submit", function(e) {
-            if (price.value.trim() == "" || years.value.trim() == "" || km.value.trim() == "") {
+            if (price.value.trim() == "" || years.value.trim() == "" || km.value.trim() == "" || brand.value.trim() == "") {
                 let error = document.getElementById('error');
                 error.innerHTML = 'Veuillez remplir tout les champs qui possède " * " .';
                 e.preventDefault();

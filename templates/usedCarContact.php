@@ -1,3 +1,11 @@
+<?php
+
+session_start();
+
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,12 +14,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="ressources/styles/style.css">
+    <link rel="stylesheet" href="../ressources/styles/style.css">
 </head>
 
 <body>
-    <?php include 'templates/header.php';
+    <!-- Inclure le header-->
+    <?php
+    include 'header.php';
 
+
+
+    require('../database/connDb.php');
+    $id = $_GET['id'];
+    $sql = "SELECT brand FROM usedcars WHERE id = '$id'";
+
+    $result = $conn->query($sql);
+    $row = $result->fetch_row();
+    $brand = $row[0];
+
+    $conn->close();
 
     if (isset($_POST['nom']) &&  isset($_POST['prenom']) && isset($_POST['email'])  && isset($_POST['telephone'])  && isset($_POST['demande'])) {
         $nom = htmlspecialchars($_POST['nom']);
@@ -20,7 +41,7 @@
         $telephone = htmlspecialchars($_POST['telephone']);
         $demande = htmlspecialchars($_POST['demande']);
 
-        require('database/connDb.php');
+        require('../database/connDb.php');
 
         $sql = "SELECT firstname, email, msg FROM messages WHERE msg = '$demande'";
 
@@ -45,6 +66,7 @@
         $conn->close();
     }
 
+
     ?>
 
     <div class="container">
@@ -53,16 +75,16 @@
         </p>
         <div class="col-8 mx-auto">
             <form action="" method="POST" id="formEvent" enctype="multipart/form-data" class="contactForm rounded">
-                <?php if (isset($errorMessage)) : ?>
-                    <div class="alert alert-danger" role="alert">
-                        <?php echo $errorMessage; ?>
-                    </div>
-                <?php endif; ?>
-                <?php if (isset($successMessage)) : ?>
-                    <div class="alert alert-success" role="alert">
-                        <?php echo $successMessage; ?>
-                    </div>
-                <?php endif; ?>
+            <?php if (isset($errorMessage)) : ?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $errorMessage; ?>
+                </div>
+            <?php endif; ?>
+            <?php if (isset($successMessage)) : ?>
+                <div class="alert alert-success" role="alert">
+                    <?php echo $successMessage; ?>
+                </div>
+            <?php endif; ?>
                 <div class="row">
                     <div class="col-lg-6 mb-2 mx-auto">
                         <label for="nom" class="form-label">Nom* :</label>
@@ -86,7 +108,7 @@
 
                     <div class="col-lg-12 mb-2 mx-auto">
                         <label for="demande" class="form-label">Votre demande*:</label>
-                        <textarea class="form-control input" name="demande" id="demande" cols="" rows="5"></textarea>
+                        <textarea class="form-control input" name="demande" id="demande" cols="" rows="5"><?= 'Bonjour, je vous contacte concernant la voiture: ' . $brand ?></textarea>
                     </div>
 
 
@@ -115,7 +137,7 @@
         })
     </script>
 
-    <?php include 'templates/footer.php' ?>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js" integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS" crossorigin="anonymous"></script>

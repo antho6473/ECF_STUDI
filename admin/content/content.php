@@ -25,7 +25,7 @@ require '../admin.php';
     $sql = "SELECT id, title, content FROM services";
 
     ?>
-    <h1 class="text-center">Gestion des avis</h1>
+    <h1 class="text-center">Gestion du contenu</h1>
     <div class="container">
         <div class="col-lg-12 py-2 mx-auto">
             <table class="table">

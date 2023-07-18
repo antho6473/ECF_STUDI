@@ -25,6 +25,9 @@
                         <li class="nav-item">
                             <a class="nav-link" href="http://localhost/demo/LuxuryGarage/admin/usedCars/usedCars.php">Gérer les voitures</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="http://localhost/demo/LuxuryGarage/admin/messages/messages.php">Gérer les messages</a>
+                        </li>
                         <?php if ($_SESSION['role'] == 2) { ?>
                             <li class="nav-item">
                                 <a class="nav-link" href="http://localhost/demo/LuxuryGarage/admin/employees/employee.php">Gérer les employés</a>
