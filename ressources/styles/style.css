@@ -176,3 +176,7 @@ ul{
     background-color: #47496B;
     margin-bottom: auto;
 }
+
+.card-img-top {
+    object-fit: cover !important;
+}

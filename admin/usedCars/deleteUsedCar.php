@@ -23,16 +23,16 @@ require '../employee.php';
 
     require('../../database/connDb.php');
     $id = $_GET['id'];
-    $sql = "UPDATE testimonials SET approuved = false WHERE id = '$id'";
+    $sql = "DELETE FROM usedcars WHERE id = '$id'";
     $conn->query($sql);
     $conn->close();
 
     ?>
     <div class="container">
         <div class="col-lg-6 py-2 mx-auto">
-            <h3 class="text-center text-dark p-5">Le commentaire a bien été désapprouvé !</h3>
+            <h3 class="text-center text-dark p-5">La voiture a bien été supprimé !</h3>
 
-            <a href="http://localhost/demo/LuxuryGarage/admin/testimonials.php"><button class="myButton">Retour au gestionnaire</button></a>
+            <a href="http://localhost/demo/LuxuryGarage/admin/usedCars/usedCars.php"><button class="myButton">Retour au gestionnaire</button></a>
         </div>
     </div>
 

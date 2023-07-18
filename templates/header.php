@@ -20,13 +20,13 @@
       <div class="offcanvas-body">
         <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="index.php">Accueil</a>
+            <a class="nav-link" aria-current="page" href="http://localhost/demo/LuxuryGarage">Accueil</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.php">Nous contacter</a>
+            <a class="nav-link" href="http://localhost/demo/LuxuryGarage/contact.php">Nous contacter</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="usedCars.php">Voitures d'occasions</a>
+            <a class="nav-link" href="http://localhost/demo/LuxuryGarage/usedCars.php">Voitures d'occasions</a>
           </li>
       
         </ul>

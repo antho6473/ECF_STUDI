@@ -1,15 +1,9 @@
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
 
-session_start();
-
-if (!isset($_SESSION['role']) || $_SESSION['role'] != 2) {
-    header('Location: http://localhost/demo/LuxuryGarage/templates/noaccess.php');
-    exit();
-}
+require '../admin.php';
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,7 +62,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 2) {
                 </tbody>
             </table>
 
-            <a href="http://localhost/demo/LuxuryGarage/admin/addEmployee.php"><button class="myButton">Ajouter un employé</button></a>
+            <a href="http://localhost/demo/LuxuryGarage/admin/employees/addEmployee.php"><button class="myButton">Ajouter un employé</button></a>
         </div>
     </div>
 

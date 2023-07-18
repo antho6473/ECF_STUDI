@@ -1,13 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
 
-session_start();
-
-if (!isset($_SESSION['role']) || $_SESSION['role'] != 2) {
-    header('Location: http://localhost/demo/LuxuryGarage/templates/noaccess.php');
-    exit();
-}
+require '../admin.php';
 
 ?>
 <!DOCTYPE html>
@@ -38,7 +31,7 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 2) {
         <div class="col-lg-6 py-2 mx-auto">
             <h3 class="text-center text-dark p-5">L'employé a bien été supprimé !</h3>
 
-            <a href="http://localhost/demo/LuxuryGarage/admin/employee.php"><button class="myButton">Retour au gestionnaire</button></a>
+            <a href="http://localhost/demo/LuxuryGarage/admin/employee/employee.php"><button class="myButton">Retour au gestionnaire</button></a>
         </div>
     </div>
 

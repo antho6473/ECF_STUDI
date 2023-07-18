@@ -1,13 +1,6 @@
 <?php
-error_reporting(E_ALL);
-ini_set("display_errors", 1);
 
-session_start();
-
-if (!isset($_SESSION['role']) || $_SESSION['role'] != 2) {
-    header('Location: http://localhost/demo/LuxuryGarage/templates/noaccess.php');
-    exit();
-}
+require '../admin.php';
 
 ?>
 <!DOCTYPE html>
@@ -18,15 +11,12 @@ if (!isset($_SESSION['role']) || $_SESSION['role'] != 2) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" href="../../ressources/styles/style.css">
+    <link rel="stylesheet" href="include 'http://localhost/demo/LuxuryGarage/employee.php';">
 </head>
 
 <body>
     <!-- Inclure le header-->
     <?php
-
-    error_reporting(E_ALL);
-    ini_set("display_errors", 1);
     include '../header.php';
 
 
