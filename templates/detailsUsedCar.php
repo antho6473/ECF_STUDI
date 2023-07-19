@@ -72,8 +72,8 @@
     ?>
 
     <div class="container">
-        <div class="col-6 mx-auto my-5">
-            <div class="contactForm rounded">
+        <div class="mx-auto my-5 detailsUsedCars">
+            <div class="rounded">
                 <div class="row">
 
                     <div class="col-lg-6 mb-2 mx-auto">
@@ -84,7 +84,7 @@
                     <div class="col-lg-12 mb-2 mx-auto">
                         <?php if ($nb_photo == 1) : ?>
 
-                            <img height="250px" class="card-img-top rounded" src="http://localhost/demo/LuxuryGarage/uploads/<?= $renderPhoto1 ?>" alt="Photo 1">
+                            <img height="250px" class="card-img-top rounded" src="https://conglutinative-spli.000webhostapp.com/uploads/<?= $renderPhoto1 ?>" alt="Photo 1">
 
                         <?php elseif ($nb_photo == 2) : ?>
 
@@ -93,11 +93,11 @@
                                 <div class="carousel-inner">
 
                                     <div class="carousel-item active c-item">
-                                        <img height="250px" src="http://localhost/demo/LuxuryGarage/uploads/<?= $renderPhoto1 ?>" class="d-block w-100 c-img rounded" alt="Slide 1">
+                                        <img height="250px" src="https://conglutinative-spli.000webhostapp.com/uploads/<?= $renderPhoto1 ?>" class="d-block w-100 c-img rounded" alt="Slide 1">
                                     </div>
 
                                     <div class="carousel-item c-item">
-                                        <img height="250px" src="http://localhost/demo/LuxuryGarage/uploads/<?= $renderPhoto2 ?>" class="d-block w-100 c-img rounded" alt="Slide 2">
+                                        <img height="250px" src="https://conglutinative-spli.000webhostapp.com/uploads/<?= $renderPhoto2 ?>" class="d-block w-100 c-img rounded" alt="Slide 2">
                                     </div>
 
                                 </div>
@@ -116,15 +116,15 @@
                                 <div class="carousel-inner">
 
                                     <div class="carousel-item active c-item">
-                                        <img height="250px" src="http://localhost/demo/LuxuryGarage/uploads/<?= $renderPhoto1 ?>" class="d-block w-100 c-img rounded" alt="Slide 1">
+                                        <img height="250px" src="https://conglutinative-spli.000webhostapp.com/uploads/<?= $renderPhoto1 ?>" class="d-block w-100 c-img rounded" alt="Slide 1">
                                     </div>
 
                                     <div class="carousel-item c-item">
-                                        <img height="250px" src="http://localhost/demo/LuxuryGarage/uploads/<?= $renderPhoto2 ?>" class="d-block w-100 c-img rounded" alt="Slide 2">
+                                        <img height="250px" src="https://conglutinative-spli.000webhostapp.com/uploads/<?= $renderPhoto2 ?>" class="d-block w-100 c-img rounded" alt="Slide 2">
                                     </div>
 
                                     <div class="carousel-item c-item">
-                                        <img height="250px" src="http://localhost/demo/LuxuryGarage/uploads/<?= $renderPhoto3 ?>" class="d-block w-100 c-img rounded" alt="Slide 3">
+                                        <img height="250px" src="https://conglutinative-spli.000webhostapp.com/uploads/<?= $renderPhoto3 ?>" class="d-block w-100 c-img rounded" alt="Slide 3">
                                     </div>
 
                                 </div>
@@ -163,8 +163,8 @@
 
 
 
-                <a href="http://localhost/demo/LuxuryGarage/usedCars.php"><button class="myButton mb-2">Retour aux annonces</button></a>
-                <a href="http://localhost/demo/LuxuryGarage/templates/usedCarContact.php?id=<?= $id ?>"><button class="myButton mb-2">Envoyer un message</button></a>
+                <a href="https://conglutinative-spli.000webhostapp.com/usedCars.php"><button class="myButton mb-2">Retour aux annonces</button></a>
+                <a href="https://conglutinative-spli.000webhostapp.com/templates/usedCarContact.php?id=<?= $id ?>"><button class="myButton mb-2">Envoyer un message</button></a>
             </div>
         </div>
     </div>

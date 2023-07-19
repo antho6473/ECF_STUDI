@@ -111,7 +111,7 @@ require '../admin.php';
 
                 </tbody>
             </table>
-            <a href="http://localhost/demo/LuxuryGarage/admin/content/addSchedule.php"><button class="myButton">Ajouter un horaire</button></a>
+            <a href="https://conglutinative-spli.000webhostapp.com/admin/content/addSchedule.php"><button class="myButton">Ajouter un horaire</button></a>
         </div>
     </div>
 

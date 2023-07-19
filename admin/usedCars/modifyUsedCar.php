@@ -382,17 +382,17 @@ set_error_handler(function(int $errno, string $errstr) {
                     <div>
                         Les images précédentes : 
                     <?php if (!empty($photo1)) : ?>
-                        <img style="object-fit: contain;" height="100px" src="http://localhost/demo/LuxuryGarage/uploads/<?= $photo1 ?>" alt="">
+                        <img style="object-fit: contain;" height="100px" src="https://conglutinative-spli.000webhostapp.com/uploads/<?= $photo1 ?>" alt="">
 
                     <?php endif; ?>
 
                     <?php if (!empty($photo2)) : ?>
-                        <img style="object-fit: contain;" height="100px" src="http://localhost/demo/LuxuryGarage/uploads/<?= $photo2 ?>" alt="">
+                        <img style="object-fit: contain;" height="100px" src="https://conglutinative-spli.000webhostapp.com/uploads/<?= $photo2 ?>" alt="">
 
                     <?php endif; ?>
 
                     <?php if (!empty($photo3)) : ?>
-                        <img style="object-fit: contain;" height="100px" src="http://localhost/demo/LuxuryGarage/uploads/<?= $photo3 ?>" alt="">
+                        <img style="object-fit: contain;" height="100px" src="https://conglutinative-spli.000webhostapp.com/uploads/<?= $photo3 ?>" alt="">
 
                     <?php endif; ?>
                     </div>

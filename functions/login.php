@@ -1,3 +1,7 @@
+<?php ob_start();
+    session_start();
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +16,6 @@
 <body>
     <?php 
 
-    session_start();
 
     include '../templates/header.php';
     include 'hashPassword.php';
@@ -30,7 +33,6 @@ if (isset($_POST['email']) &&  isset($_POST['pass'])) {
     $isPasswordCorrect = password_verify($_POST['pass'], $row[1]);
     if($isPasswordCorrect) {
         $_SESSION['role'] = $row[2];
-        ob_start();
         header('Location: ../admin/pannelAdmin.php');
         exit();
     }else {
@@ -93,8 +95,6 @@ if ($_SESSION['role'] != 1 && $_SESSION['role'] != 2): ?>
         </script>
     </div>
     <?php else: 
-        
-        ob_start();
         header('Location: ../admin/pannelAdmin.php');
         exit();
     

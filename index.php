@@ -1,3 +1,6 @@
+<?php 
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,7 +15,6 @@
 <body>
     <!-- Inclure le header-->
     <?php 
-    session_start();
     include 'templates/header.php' ?>
 
     <!-- Premiere section content1 -->

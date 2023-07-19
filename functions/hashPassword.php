@@ -4,7 +4,7 @@ require('../database/connDb.php');
 
 $sql = "SELECT email, pass, role_id FROM users WHERE role_id = '2'";
 $user = "user@admin.com";
-$pass = "admin";
+$pass = "admin64@85";
 $role = "2";
 
 $result = $conn->query($sql);

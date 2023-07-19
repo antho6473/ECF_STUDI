@@ -75,7 +75,7 @@ require '../employee.php';
                 </tbody>
             </table>
 
-            <a href="http://localhost/demo/LuxuryGarage/admin/employees/addEmployee.php"><button class="myButton">Ajouter un employé</button></a>
+            <a href="https://conglutinative-spli.000webhostapp.com/admin/employees/addEmployee.php"><button class="myButton">Ajouter un employé</button></a>
         </div>
     </div>
 

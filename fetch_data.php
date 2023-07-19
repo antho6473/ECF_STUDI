@@ -37,7 +37,7 @@ if(isset($_POST["action"])){
             <div class="card">';
                  if (empty($photo2) && empty($photo3)) : 
 
-                    $output .= '<img height="250px" class="card-img-top" src="http://localhost/demo/LuxuryGarage/uploads/'. $photo1 .'" alt="Photo 1">';
+                    $output .= '<img height="250px" class="card-img-top" src="https://conglutinative-spli.000webhostapp.com/uploads/'. $photo1 .'" alt="Photo 1">';
 
                 elseif (empty($photo3)) :
 
@@ -46,11 +46,11 @@ if(isset($_POST["action"])){
                         <div class="carousel-inner">
 
                             <div class="carousel-item active c-item">
-                                <img height="250px" src="http://localhost/demo/LuxuryGarage/uploads/'. $photo1 .'" class="d-block w-100 c-img" alt="Slide 1">
+                                <img height="250px" src="https://conglutinative-spli.000webhostapp.com/uploads/'. $photo1 .'" class="d-block w-100 c-img" alt="Slide 1">
                             </div>
 
                             <div class="carousel-item c-item">
-                                <img height="250px" src="http://localhost/demo/LuxuryGarage/uploads/'. $photo2 .'" class="d-block w-100 c-img" alt="Slide 2">
+                                <img height="250px" src="https://conglutinative-spli.000webhostapp.com/uploads/'. $photo2 .'" class="d-block w-100 c-img" alt="Slide 2">
                             </div>
 
                         </div>
@@ -69,15 +69,15 @@ if(isset($_POST["action"])){
                         <div class="carousel-inner">
 
                             <div class="carousel-item active c-item">
-                                <img height="250px" src="http://localhost/demo/LuxuryGarage/uploads/'. $photo1 .'" class="d-block w-100 c-img" alt="Slide 1">
+                                <img height="250px" src="https://conglutinative-spli.000webhostapp.com/uploads/'. $photo1 .'" class="d-block w-100 c-img" alt="Slide 1">
                             </div>
 
                             <div class="carousel-item c-item">
-                                <img height="250px" src="http://localhost/demo/LuxuryGarage/uploads/'. $photo2 .'" class="d-block w-100 c-img" alt="Slide 2">
+                                <img height="250px" src="https://conglutinative-spli.000webhostapp.com/uploads/'. $photo2 .'" class="d-block w-100 c-img" alt="Slide 2">
                             </div>
 
                             <div class="carousel-item c-item">
-                                <img height="250px" src="http://localhost/demo/LuxuryGarage/uploads/'. $photo3 .'" class="d-block w-100 c-img" alt="Slide 3">
+                                <img height="250px" src="https://conglutinative-spli.000webhostapp.com/uploads/'. $photo3 .'" class="d-block w-100 c-img" alt="Slide 3">
                             </div>
 
                         </div>
@@ -96,8 +96,8 @@ if(isset($_POST["action"])){
                     <h4 class="card-title text-center">'. $price .'€</h3>
                     <p class="card-text">Année de fabrication: '. $years .'</p>
                     <p class="card-text">Kilométrage: '. $km .'km</p>
-                    <a href="http://localhost/demo/LuxuryGarage/templates/detailsUsedCar.php?id='. $id .'"><button class="myButton mb-2">Détail</button></a>
-                    <a href="http://localhost/demo/LuxuryGarage/templates/usedCarContact.php?id='. $id .'"><button class="myButton mb-2">Envoyer un message</button></a>
+                    <a href="https://conglutinative-spli.000webhostapp.com/templates/detailsUsedCar.php?id='. $id .'"><button class="myButton mb-2">Détail</button></a>
+                    <a href="https://conglutinative-spli.000webhostapp.com/templates/usedCarContact.php?id='. $id .'"><button class="myButton mb-2">Envoyer un message</button></a>
                 </div>
             </div>
         </div>';
