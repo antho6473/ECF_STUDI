@@ -8,11 +8,11 @@
 - Un SGBD type PhpMyAdmin.
 Je recommande l'utilisation du logiciel "XAMPP" sur Windows "LAMP" sur MacOS et "MAMP" sur Linux, logiciel permettant de gérer un serveur local facilement.
 ## Récupérer le dossier du projet.
-### Avec git ( vous devez avoir git d'installer sur votre machine ).
+### Avec git ( vous devez avoir git d'installé sur votre machine ).
 - Lancez votre Terminal.
 - Allez dans votre dossier de projets.
 - Exécutez la commande suivante:
->git clone https://github.com/antho6473/ECF_STUDI.git.
+`git clone https://github.com/antho6473/ECF_STUDI.git`
 ### Sans git.
 - Allez sur mon [projet git](https://github.com/antho6473/ECF_STUDI).
 - CLiquez sur "Code" et sur "Download zip" ou "Télécharger Zip".
