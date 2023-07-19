@@ -21,7 +21,7 @@ Je recommande l'utilisation du logiciel "XAMPP" sur Windows "LAMP" sur MacOS et 
 - Lancez votre serveur ainsi que MYSQL.
 - Allez sur votre SGBD et cliquez sur "Importer", cherchez le répertoire du projet, allez dans le dossier "database" et séléctionnez "database.sql".
 - Allez ensuite dans ce même dossier et ouvrez le fichier "connDb.php" dans votre éditeur de texte.
-- Changez les 4 variables celon vos besoins (généralement $servername ne change pas).
+- Changez $username et $password celon vote configuration de sgbd, $servername ne change généralement pas.
 - Enregistrez le fichier (CTRL + S) et fermez le.
 - Désormais allez dans le dossier "functions" présent à la racine du projet et ouvrez le fichier "hashPassword.php".
 - Modifiez les valeurs $user et $pass qui seront vos identifiants d'admin de connexion au site.
