@@ -29,7 +29,8 @@
                 </p>
             </div>
             <div class="col-lg-6">
-                <div class="image1" style="height: 50vh; width: auto;"></div>
+                <div class="image1" style="-webkit-clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);height: 50vh; width: auto;"></div>
             </div>
         </div>
     </div>
