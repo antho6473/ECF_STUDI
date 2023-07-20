@@ -1,3 +1,13 @@
+<?php ob_start();
+
+set_error_handler(function(int $errno, string $errstr) {
+    if ((strpos($errstr, 'Undefined array key') === false) && (strpos($errstr, 'Undefined variable') === false)) {
+        return false;
+    } else {
+        return true;
+    }
+}, E_WARNING);
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +40,6 @@ if (isset($_POST['email']) &&  isset($_POST['pass'])) {
     $isPasswordCorrect = password_verify($_POST['pass'], $row[1]);
     if($isPasswordCorrect) {
         $_SESSION['role'] = $row[2];
-        ob_start();
         header('Location: ../admin/pannelAdmin.php');
         exit();
     }else {
@@ -44,13 +53,7 @@ if (isset($_POST['email']) &&  isset($_POST['pass'])) {
 
 
     $conn->close();
-    
-    ?>
-
-<?php 
-
 if ($_SESSION['role'] != 1 && $_SESSION['role'] != 2): ?>
-    
 <div class="container">
         <h1 class="pt-5 text-center">Formulaire de connexion</h1>
         <p class="text-center text-dark">Veuillez rentrer vos identifiants
@@ -94,14 +97,12 @@ if ($_SESSION['role'] != 1 && $_SESSION['role'] != 2): ?>
     </div>
     <?php else: 
         
-        ob_start();
         header('Location: ../admin/pannelAdmin.php');
         exit();
     
     endif; ?>
     <!-- Inclure le footer-->
     <?php include '../templates/footer.php' ?>
-
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>

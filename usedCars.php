@@ -1,10 +1,16 @@
+<?php
+error_reporting(E_ALL);
+ini_set("display_errors", 1);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Voitures d'occasions - Garage Parrot</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="ressources/styles/style.css">
     <link rel="stylesheet" href="ressources/jquery/jquery-ui.css">
@@ -14,6 +20,7 @@
     .card-img-top, .c-img {
         object-fit: cover;
     }
+
     </style>
 </head>
 
@@ -29,16 +36,13 @@
                 <h2 class="text-center text-white">
                     Filtre
                 </h2>
-
-
-
                 <div class="list-group">
                     <h5 class="p-3 text-center">Prix</h5>
                     <input type="hidden" id="hidden_minimum_price" value="1000" />
                     <input type="hidden" id="hidden_maximum_price" value="65000" />
                     <div class="row">
-                        <div id="price_show_min" class="col-6 p-1 text-start">1000</div>
-                        <div id="price_show_max" class="col-6 p-1 text-end">65000</div>
+                        <div id="price_show_min" class="col-6 p-1 text-start">1000€</div>
+                        <div id="price_show_max" class="col-6 p-1 text-end">65000€</div>
                     </div>
                     <div id="price_range"></div>
                 
@@ -56,8 +60,8 @@
                     <input type="hidden" id="hidden_minimum_km" value="10000" />
                     <input type="hidden" id="hidden_maximum_km" value="500000" />
                     <div class="row">
-                        <div id="km_show_min" class="col-6 p-1 text-start">10000</div>
-                        <div id="km_show_max" class="col-6 p-1 text-end">500000</div>
+                        <div id="km_show_min" class="col-6 p-1 text-start">10000km</div>
+                        <div id="km_show_max" class="col-6 p-1 text-end">500000km</div>
                     </div>
                     <div id="km_range"></div>
 
@@ -121,8 +125,8 @@
                     values: [1000, 65000],
                     step: 500,
                     stop: function(event, ui) {
-                        $('#price_show_min').html(ui.values[0]);
-                        $('#price_show_max').html(ui.values[1]);
+                        $('#price_show_min').html(ui.values[0] + "€");
+                        $('#price_show_max').html(ui.values[1] + "€");
                         $('#hidden_minimum_price').val(ui.values[0]);
                         $('#hidden_maximum_price').val(ui.values[1]);
                         filter_data();
@@ -151,8 +155,8 @@
                     values: [10000, 500000],
                     step: 500,
                     stop: function(event, ui) {
-                        $('#km_show_min').html(ui.values[0]);
-                        $('#km_show_max').html(ui.values[1]);
+                        $('#km_show_min').html(ui.values[0] + "km");
+                        $('#km_show_max').html(ui.values[1] + "km");
                         $('#hidden_minimum_km').val(ui.values[0]);
                         $('#hidden_maximum_km').val(ui.values[1]);
                         filter_data();

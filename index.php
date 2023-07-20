@@ -1,10 +1,13 @@
+<?php session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Accueil - Garage Parrot</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="ressources/styles/style.css">
 </head>
@@ -12,13 +15,12 @@
 <body>
     <!-- Inclure le header-->
     <?php 
-    session_start();
     include 'templates/header.php' ?>
 
     <!-- Premiere section content1 -->
     <div class="container headContent">
         <div class="row">
-            <div class="col-md-7">
+            <div class="col-lg-6 py-2">
                 <h1 class="text-left">
                     Expérience automobile d'exception, à portée de main chez Garage Parrot
                 </h1>
@@ -26,8 +28,8 @@
                     Bienvenue chez V. PARROT, votre <strong> automobile de confiance</strong> ! Nous sommes spécialisés dans la mécanique, la carrosserie et le montage de pneus.Notre équipe de professionnels expérimentés est là pour prendre soin de votre véhicule de A à Z. Que vous ayez besoin d'une réparation mécanique, d'une remise en état de carrosserie ou d'un changement de pneus, nous sommes équipés des outils et des compétences nécessaires pour vous offrir un service de qualité supérieure.
                 </p>
             </div>
-            <div class="col-md-5">
-                <div class="image1"></div>
+            <div class="col-lg-6">
+                <div class="image1" style="height: 50vh; width: auto;"></div>
             </div>
         </div>
     </div>

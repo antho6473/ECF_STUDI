@@ -21,7 +21,7 @@ h1 {
     font-family: 'KumarOne';
     font-size: 42px;
     color:#000000;
-    padding: 20px;
+    padding-top: 50px;
 }
 
 h2{
@@ -53,6 +53,10 @@ body{
     font-family: 'Roboto' !important;
 }
 
+#loginn{
+    min-height: 100vh !important;
+}
+
 .menuMobile, footer{
     background-color: #272a67;
 }
@@ -82,7 +86,7 @@ color: #000000;
 background-color: #b6d5c9;
 padding: 10px 30px;
 border: none;
-box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
+box-shadow: rgba(0, 0, 0, 0.4) 0px 12px 28px 0px, rgba(0, 0, 0, 0.1) 0px 2px 4px 0px, rgba(255, 255, 255, 0.05) 0px 0px 0px 1px inset;
 border-radius: 50px;
 transition : 1000ms;
 transform: translateY(0);
@@ -125,11 +129,27 @@ ul{
 }
 
 .image1{
-    height: 300px;
-    width: 500px;
+    margin-top: 50px;
+    height: 40vh !important;
+    width: 30vw !important;
     background-size: cover;
     background-image: url(../images/index/garage.jpg);
 }
+
+@media screen and (max-width: 600px) {
+    .image1{
+        width: auto;
+        background-size: cover;
+        background-image: url(../images/index/garage.jpg);
+    }
+    .headContent, .services, .comments{
+        padding-top: 10px;
+        padding-bottom: 50px;;
+    }
+    .detailsUsedCars{
+        width: 80vw;
+    }
+  }
 
 .card-text {
     text-align: justify;
@@ -174,9 +194,14 @@ ul{
 .filtre {
     padding: 25px;
     background-color: #47496B;
+    margin-right: 30px !important;
     margin-bottom: auto;
 }
 
 .card-img-top {
     object-fit: cover !important;
+}
+
+.detailsUsedCars{
+    width: 50%;
 }

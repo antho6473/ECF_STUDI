@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Témoignages - Garage Parrot</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.ico"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <link rel="stylesheet" href="ressources/styles/style.css">
 </head>
@@ -24,7 +25,7 @@
         $prenom = htmlspecialchars($_POST['prenom']);
         $testimonial = htmlspecialchars($_POST['testimonial']);
         $note = htmlspecialchars($_POST['note']);
-        $approuved = true;
+        $approuved = 0;
 
         $sql = "SELECT lastname, firstname, testimonial, rating, approuved FROM testimonials WHERE testimonial = '$testimonial'";
 
