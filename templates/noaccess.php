@@ -18,7 +18,7 @@
     <!-- Premiere section content1 -->
     <div class="container">
         <h2 class ="p-3 text-center" style="padding-top: 50px !important;">Vous n'avez pas accès à cette page !</h2>
-        <a href="http://localhost/demo/LuxuryGarage/index.php"><button class="myButton">Accueil</button></a>
+        <a href="https://conglutinative-spli.000webhostapp.com/index.php"><button class="myButton">Accueil</button></a>
     </div>
 
     <!-- Inclure le footer-->

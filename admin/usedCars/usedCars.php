@@ -87,7 +87,7 @@ require '../employee.php';
 
                 </tbody>
             </table>
-            <a href="http://localhost/demo/LuxuryGarage/admin/usedCars/addUsedCar.php"><button class="myButton">Ajouter une voiture</button></a>
+            <a href="https://conglutinative-spli.000webhostapp.com/admin/usedCars/addUsedCar.php"><button class="myButton">Ajouter une voiture</button></a>
 
         </div>
     </div>

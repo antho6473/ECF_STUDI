@@ -1,12 +1,6 @@
 <?php ob_start();
+    session_start();
 
-set_error_handler(function(int $errno, string $errstr) {
-    if ((strpos($errstr, 'Undefined array key') === false) && (strpos($errstr, 'Undefined variable') === false)) {
-        return false;
-    } else {
-        return true;
-    }
-}, E_WARNING);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -22,7 +16,6 @@ set_error_handler(function(int $errno, string $errstr) {
 <body>
     <?php 
 
-    session_start();
 
     include '../templates/header.php';
     include 'hashPassword.php';
@@ -96,7 +89,6 @@ if ($_SESSION['role'] != 1 && $_SESSION['role'] != 2): ?>
         </script>
     </div>
     <?php else: 
-        
         header('Location: ../admin/pannelAdmin.php');
         exit();
     

@@ -32,7 +32,7 @@ require '../employee.php';
         <div class="col-lg-6 py-2 mx-auto">
             <h3 class="text-center text-dark p-5">La voiture a bien été supprimé !</h3>
 
-            <a href="http://localhost/demo/LuxuryGarage/admin/usedCars/usedCars.php"><button class="myButton">Retour au gestionnaire</button></a>
+            <a href="https://conglutinative-spli.000webhostapp.com/admin/usedCars/usedCars.php"><button class="myButton">Retour au gestionnaire</button></a>
         </div>
     </div>
 

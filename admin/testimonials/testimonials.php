@@ -77,7 +77,7 @@ require '../employee.php';
                 </tbody>
             </table>
 
-            <a href="http://localhost/demo/LuxuryGarage/testimonial.php"><button class="myButton">Ajouter un avis</button></a>
+            <a href="https://conglutinative-spli.000webhostapp.com/testimonial.php"><button class="myButton">Ajouter un avis</button></a>
         </div>
     </div>
 
