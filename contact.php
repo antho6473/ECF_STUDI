@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" style="height:100%;">
 
 <head>
     <meta charset="UTF-8">
@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="ressources/styles/style.css">
 </head>
 
-<body>
+<body style="min-height: 100%;
+  margin: 0;
+  padding: 0;">
     <?php include 'templates/header.php';
 
 

@@ -1,6 +1,6 @@
 <div id="footer" class="container-fluid p-0 mt-5">
 
-  <footer class="text-white text-lg-start">
+  <footer style="position: absolute; bottom: 0; left: 0; right: 0;" class="text-white text-lg-start">
 
     <div class="container p-4">
 
